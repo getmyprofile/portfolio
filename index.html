@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Personal Portfolio</title>
+    <style>
+        :root {
+            --tile-width: 350px;
+            --main-text-size : 30px;
+            --sub-text-size: 20px;
+            --Contact-header-size: 3rem;
+
+            --main-white: #f0f0f0;
+            --main-red: #be3144;
+            --main-black: black;
+            --main-gray: #303841;
+            --main-blue: #45567d;
+            --bg-black: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+        }
+
+        .welcome-text {
+            width: 30ch;
+            animation: typing 3s steps(30);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        #blink {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            color: var(--main-white);
+            font-size: 30px;
+            font-family: 'Roboto', sans-serif;
+            animation: blinkingText 2s infinite;
+        }
+
+        @keyframes blinkingText {
+            0% {
+                color: var(--main-white);
+            }
+
+            49% {
+                color: transparent;
+            }
+
+            50% {
+                color: transparent;
+            }
+
+            99% {
+                color: transparent;
+            }
+
+            100% {
+                color: var(--main-white);
+            }
+        }
+
+        #name:hover {
+            color: var(--main-red);
+            font-size: 1.5em;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-black);
+            background-image: var(--bg-black);
+            overflow-x: hidden;
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--main-red);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .nav-link {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 3%;
+        }
+
+        .nav-link li {
+            padding-right: 5%;
+        }
+
+        .nav-link a {
+            text-decoration: none;
+            color: var(--main-white);
+            font-weight: bold;
+            font-size: 1.3rem;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .nav-link a:hover {
+            color: var(--bg-black);
+            font-size: 1.5em;
+        }
+
+        #welcome-section {
+            padding-top: 0px;
+            margin-top: 0px;
+            /* display: block; */
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #About {
+            padding: 5%;
+            text-align: left;
+            color: var(--main-white);
+            font-weight: bold;
+            font-size: var(--main-text-size);
+            font-family: 'Roboto Slab', serif;
+        }
+
+        #projects {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, var(--tile-width));
+            grid-gap: 4em;
+            padding-top: 4em;
+            padding-bottom: 4em;
+            justify-content: center;
+            background-color: var(--main-blue);
+        }
+
+        .project-tile {
+            width: 100%;
+            height: auto;
+            padding: 2%;
+            text-align: center;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            background-color: var(--main-gray);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .p-link {
+            text-decoration: none;
+        }
+
+        .p-image {
+            width: 100%;
+            height: 300px;
+            border-radius: 3px;
+        }
+
+        .p-label {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            font-size: 1.3rem;
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--main-white);
+        }
+
+        #Contact {
+            display: block;
+            text-align: center;
+        }
+
+        #Contact-header {
+            color: var(--main-white);
+            font-size: var(--Contact-header-size);
+            font-family: 'Roboto Slab', serif;
+        }
+
+        #Contact-links {
+            margin-bottom: 3%;
+        }
+
+        .Contact-btn {
+            background-color: var(--main-red);
+            border: none;
+            color: var(--main-white);
+            padding: 10px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: var(--sub-text-size);
+            font-weight: bold;
+            font-family: 'Ubuntu', sans-serif;
+            margin-right: 3%;
+        }
+
+        .Contact-btn:hover {
+            font-size: 22px;
+            color: var(--bg-black);
+        }
+
+        #foot {
+            border-top: 4px solid var(--main-red);
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: var(--main-white);
+            font-weight: bold;
+            font-size: var(--sub-text-size);
+            font-family: 'Roboto Slab', serif;
+        }
+
+        @media (max-width: 360px) {
+            :root{
+                --tile-width: 300px;
+                --main-text-size: 20px;
+                --sub-text-size: 15px;
+                --Contact-header-size: 1.5rem;
+            }            
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <nav id="navbar">
+                <ul class="nav-link">
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#projects">Work</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <li><a id="profile-link" href="https://github.com/getmyprofile" target="_blank">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="welcome-section">
+            <article id="About">
+                <div class="welcome-text">
+                    <h1>Hello, I'm <span id="name">Rahul Das</span></h1>
+                    <h5 style="text-align: right;">A software developer enthusiast...</h5>
+                </div>
+            </article>
+            <span id="blink">Scroll Down</span>
+            <span id="blink">v</span>
+            <span id="blink">v</span>
+        </section>
+        <section id="projects">
+            <article class="project-tile">
+                <a class="p-link" href="https://getmyprofile.github.io/covid19-tracker/">
+                    <img class="p-image" src="https://drive.google.com/thumbnail?id=1rh3-czb-R8ENhOKF9pNk9IGLm2tJqEz_"
+                        alt="Covid19-Tracker">
+                    <p><span class="p-label">Covid19-Tracker</span></p>
+                </a>
+            </article>
+            <article class="project-tile">
+                <a class="p-link" href="https://getmyprofile.github.io/maradona/">
+                    <img class="p-image" src="https://drive.google.com/thumbnail?id=1Yvz9XC7fkhIxQxelRGvCcWjRMwhlNT3d"
+                        alt="Tribute for Maradona">
+                    <p><span class="p-label">Tribute for Maradona</span></p>
+                </a>
+            </article>
+            <article class="project-tile">
+                <a class="p-link" href="https://getmyprofile.github.io/survey-form/">
+                    <img class="p-image" src="https://drive.google.com/thumbnail?id=1awuq8ZbMcRSAonUUtZiQH21m3ux3kzdZ"
+                        alt="Survey Form">
+                    <p><span class="p-label">Survey Form</span></p>
+                </a>
+            </article>
+            <article class="project-tile">
+                <a class="p-link" href="https://getmyprofile.github.io/product-page/">
+                    <img class="p-image" src="https://drive.google.com/thumbnail?id=1uOye-klQrUuMkYthIX5D4CQSFStBCLg5"
+                        alt="Product Landing">
+                    <p><span class="p-label">Product Landing</span></p>
+                </a>
+            </article>
+            <article class="project-tile">
+                <a class="p-link" href="https://getmyprofile.github.io/tech-documentation/">
+                    <img class="p-image" src="https://drive.google.com/thumbnail?id=1gkIl7qqCWo6INLeJ8fB3bE_4sk-m52As"
+                        alt="Tech Documentation">
+                    <p><span class="p-label">Tech Documentation</span></p>
+                </a>
+            </article>
+        </section>
+        <section id="Contact">
+            <h2 id="Contact-header">Let's work together...</h2>
+            <div id="Contact-links">
+                <a href="https://github.com/getmyprofile" target="_blank"><button class="Contact-btn">GitHub</button></a>
+                <a href="mailto:pinletter@gmail.com"><button class="Contact-btn">Send a mail</button></a>
+                <a href="tel:+44-7480932198"></a><button class="Contact-btn">Call me</button></a>
+            </div>
+        </section>
+        <footer id="foot">
+            <p>
+                This portfolio website contains some of my project works.
+            </p>
+            &copy; Created by Rahul Das 2021
+        </footer>
+    </main>
+</body>
+
+</html>
